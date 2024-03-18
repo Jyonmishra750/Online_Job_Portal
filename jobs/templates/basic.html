@@ -11,11 +11,13 @@
   <title>{% block title %}{% endblock %}</title>
   <style>
     .navbar {
-      background-color: #4f868c;
+      background-color: palegoldenrod;
     }
     .nav-link:hover
     {
-      background-color: lightgreen;
+      font-style: italic;
+      color: aliceblue;
+      background-color: darkgoldenrod;
       border-radius: 5px solid;
       border-style:hidden;
     }
@@ -44,7 +46,7 @@
       <div class="container-fluid mt-2">
         <img src="static/job_portal_logo.jpg" alt="" width="25%">
        <span>
-        <h2 style="color:black;margin-left: 10%;font-family:cursive;"><b>Welcome To Online Job Portal</b></h2>
+        <!-- <h2 style="color:black;margin-left: 10%;font-family:cursive;"><b>Welcome To Online Job Portal</b></h2> -->
        </span>
     </div>
       <div class="container-fluid" >
@@ -52,20 +54,20 @@
         aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button> -->
-      <div class="container-fluid" id="navbarSupportedContent" style="margin-left: 15%; font-size: larger;">
+      <div class="container-fluid" id="navbarSupportedContent" style="margin-left: 50%; font-size: larger;">
         <ul class="navbar-nav ">
           {% if not request.user.is_authenticated %}
           <li class="nav-item"  >
             <a class="nav-link {% block home %} {% endblock %}" aria-current="page" href="/" style="color:darkred; font-weight: 500; ">Home</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link {% block user_login %} {% endblock %}" href="/user_login/"style="color: darkred; font-weight: 500;">User Login</a>
+            <a class="nav-link {% block user_login %} {% endblock %}" href="/user_login/"style="color: darkred; font-weight: 500;">User</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link {% block admin_login %} {% endblock %}" href="/admin_login/"style="color: darkred; font-weight: 500;">Admin Login</a>
+            <a class="nav-link {% block admin_login %} {% endblock %}" href="/admin_login/"style="color: darkred; font-weight: 500;">Admin</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link {% block company_login %} {% endblock %}" href="/company_login/"style="color: darkred; font-weight: 500; ">Company Login</a>
+            <a class="nav-link {% block company_login %} {% endblock %}" href="/company_login/"style="color: darkred; font-weight: 500; ">Company</a>
           </li>
           {% else %}
           <li class="nav-item">
